@@ -268,6 +268,7 @@ class Device(ValuesMixin, GPIOBase):
             ('lgpio',   'gpiozero.pins.lgpio:LGPIOFactory'),
             ('rpio',    'gpiozero.pins.rpio:RPIOFactory'),
             ('pigpio',  'gpiozero.pins.pigpio:PiGPIOFactory'),
+            ('rgpio',   'gpiozero.pins.rgpio:RGPIOFactory'),
             ('native',  'gpiozero.pins.native:NativeFactory'),
         ))
         name = os.environ.get('GPIOZERO_PIN_FACTORY')

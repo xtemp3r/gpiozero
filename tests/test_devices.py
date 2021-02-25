@@ -64,13 +64,14 @@ def test_default_pin_factory_order():
             warnings.resetwarnings()
             with pytest.raises(BadPinFactory):
                 device = GPIODevice(2)
-            assert len(ws) == 5
+            assert len(ws) == 6
             assert all(w.category == PinFactoryFallback for w in ws)
             assert ws[0].message.args[0].startswith('Falling back from rpigpio:')
             assert ws[1].message.args[0].startswith('Falling back from lgpio:')
             assert ws[2].message.args[0].startswith('Falling back from rpio:')
             assert ws[3].message.args[0].startswith('Falling back from pigpio:')
-            assert ws[4].message.args[0].startswith('Falling back from native:')
+            assert ws[4].message.args[0].startswith('Falling back from rgpio:')
+            assert ws[5].message.args[0].startswith('Falling back from native:')
 
 def test_device_bad_pin(mock_factory):
     with pytest.raises(GPIOPinMissing):
