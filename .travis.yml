@@ -5,7 +5,8 @@ language: python
 before_install:
   - pip install pytest
   - python setup.py install
-  - cd tests/
+
 
 script:
+  - cd tests/
   - pytest
